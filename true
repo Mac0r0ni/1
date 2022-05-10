@@ -1,0 +1,9 @@
+if use_preset == True:
+    username = preset_username
+elif use_creds == True:
+    with open("credentials.txt", "r") as a_file:
+        for line in a_file:
+            stripped_line = line.strip()
+            cred = stripped_line.split(":")
+            credentials[cred[0]] = cred[1]
+    a_file.close()
